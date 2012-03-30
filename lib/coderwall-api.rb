@@ -1,5 +1,6 @@
 require "coderwall-api/client"
 require "coderwall-api/hash"
+require "coderwall-api/version"
 
 module Coderwall
   
