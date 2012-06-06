@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Coderwall-api by willrax</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Coderwall-api</h1>
+        <p>a gem that allows access to user profiles through the Coderwall api</p>
+        <p class="view"><a href="https://github.com/willrax/coderwall-api">View the Project on GitHub <small>willrax/coderwall-api</small></a></p>
+        <ul>
+          <li><a href="https://github.com/willrax/coderwall-api/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/willrax/coderwall-api/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/willrax/coderwall-api">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>coderwall-api</h1>
+
+<p>A simple gem that allows you to access User Profiles on <a href="http://coderwall.com">Coderwall</a></p>
+
+<h2>Installation</h2>
+
+<p>First install the gem:</p>
+
+<pre><code>gem install coderwall-api
+</code></pre>
+
+<p>or add to your bundler</p>
+
+<pre><code>gem 'coderwall-api'
+</code></pre>
+
+<p>then you're ready to roll.</p>
+
+<h2>Usage</h2>
+
+<p>First step is to fire up a new client to use. At this point the only available action is to check someones profile. But this will be the core for any future needs.</p>
+
+<pre><code>cw = Coderwall::Client.new
+</code></pre>
+
+<p>Now you can access a profile. </p>
+
+<pre><code>profile = cw.profile('willrax')
+</code></pre>
+
+<p>This will return to you a Hash with method style access to keys.</p>
+
+<pre><code>profile.location =&gt; "Sydney"
+profile.accounts =&gt; {:github=&gt;"willrax"}
+profile.accounts.github =&gt; "willrax"
+</code></pre>
+
+<p>You can do things like:</p>
+
+<pre><code>profile.accounts.each do |k,v|
+    puts "#{profile.username} is a member of #{k}"
+end
+
+=&gt; willrax is a member of github
+</code></pre>
+
+<h2>Contributing to coderwall-api</h2>
+
+<ul>
+<li>Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.</li>
+<li>Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.</li>
+<li>Fork the project.</li>
+<li>Start a feature/bugfix branch.</li>
+<li>Commit and push until you are happy with your contribution.</li>
+<li>Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.</li>
+<li>Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.</li>
+</ul><h2>Copyright</h2>
+
+<p>Copyright (c) 2012 Will. See LICENSE.txt for
+further details.</p>
+
+<p><a href="http://coderwall.com/willrax"><img src="http://api.coderwall.com/willrax/endorse.png" alt="endorse"></a></p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/willrax">willrax</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
